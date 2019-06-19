@@ -5,7 +5,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 	<head>
-		<title>人事管理系统 ——后台管理</title>
+		<title>在线答疑系统 ——后台管理</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta http-equiv="pragma" content="no-cache" />
 		<meta http-equiv="cache-control" content="no-cache" />
@@ -28,29 +28,47 @@
 		  	<tr valign="top">
 			    <td>
 				  <table width="100%" border="0" cellpadding="0" cellspacing="10" class="main_tab">
-				    <tr><td class="font3 fftd">用户姓名：<font color="red" size="2">${sessionScope.user_session.username}</font></td></tr>
+				    <tr><td class="font3 fftd">名称：<font color="red" size="2">${sessionScope.user_session.uname}</font></td></tr>
+				    <tr><td class="font3 fftd">邮箱：<font color="red" size="2">${sessionScope.user_session.uemail}</font></td></tr>
 					<tr><td class="main_tdbor"></td></tr>
-					
-					<tr><td class="font3 fftd">用户状态：<font color="red" size="2">
-						<c:choose>
-							<c:when test="${sessionScope.user_session.userstatus == 1}">
-								已审核
-							</c:when>
-							<c:otherwise>
-								未审核
-							</c:otherwise>
-						</c:choose>
-					</font></td></tr>
 					<tr><td class="main_tdbor"></td></tr>
 					<tr>
 						<td class="font3 fftd">
 							创建时间：<font color="red" size="2">
-							<f:formatDate value="${sessionScope.user_session.createDate}" 
+							<f:formatDate value="${sessionScope.user_session.uregdate}" 
 								type="date" dateStyle="long"/>
 								</font>
 						</td>
 					</tr>
-					<tr><td></td></tr>
+					<tr>
+						<td class="font3 fftd">
+							最后登录时间：<font color="red" size="2">
+							<f:formatDate value="${sessionScope.user_session.ulastlogin}" 
+								type="date" dateStyle="long"/>
+								</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="font3 fftd">
+							最近发表时间：<font color="red" size="2">
+							<c:if test="${empty sessionScope.user_session.ulastemit}">
+							  <a>无发表</a></c:if>
+							<c:if test="${sessionScope.user_session.ulastemit!=null}">
+							<f:formatDate value="${sessionScope.user_session.ulastemit}" 
+								type="date" dateStyle="long"/></c:if>
+								</font>
+						</td>
+					</tr>
+					<tr>
+						<td class="font3 fftd">
+							发表权限：<font color="red" size="2">
+							<c:if test="${sessionScope.user_session.upermit==1}">
+							     <a>是</a></c:if>
+							<c:if test="${sessionScope.user_session.upermit!=1}">
+							    　<a>否</a></c:if>
+							</font>
+						</td>
+					</tr>
 				  </table>
 				</td>
 		  	</tr>

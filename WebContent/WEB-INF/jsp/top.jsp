@@ -24,7 +24,7 @@
     	
     	$("#exit").click(function(){
     		/** parent从主界面进行退出,避免局部刷新*/
-    		parent.location = "${ctx}/logout.action";
+    		parent.location = "${ctx}/logout";
     	})
 	})
 	
@@ -46,7 +46,7 @@
 		    <table width="100%" border="0" cellpadding="0" cellspacing="0">
 			  <tr>
 			    <td width="60"><img src="${ctx}/images/StatBarL.gif" width="60" height="30"></td>
-				<td class="topnavlh" align="left"><img src="${ctx}/images/StatBar_admin.gif">&nbsp;&nbsp;当前用户：【${sessionScope.user_session.username}】</td>
+				<td class="topnavlh" align="left"><img src="${ctx}/images/StatBar_admin.gif">&nbsp;&nbsp;当前用户：【${sessionScope.user_session.uname}】</td>
 				<td class="topnavlh" align="right"><img src="${ctx}/images/StatBar_time.gif">&nbsp;&nbsp;<span id="nowTime"></span>
 				
   			 </td>

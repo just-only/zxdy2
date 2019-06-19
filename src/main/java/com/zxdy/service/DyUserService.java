@@ -56,4 +56,5 @@ public interface DyUserService {
 	 * */
 	List<DyUser> findDyUser(DyUser user,PageModel pageModel);
 	
+	int selectRole(Integer id);
 }

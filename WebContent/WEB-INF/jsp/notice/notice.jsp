@@ -24,25 +24,20 @@
 	<link href="${ctx}/css/pager.css" type="text/css" rel="stylesheet" />
 	<script type="text/javascript">
 	$(function(){
-		
 			/** 获取上一次选中的部门数据 */
 	 	   var boxs  = $("input[type='checkbox'][id^='box_']");
-			
 	 	  /** 给全选按钮绑定点击事件  */
 	    	$("#checkAll").click(function(){
 	    		// this是checkAll  this.checked是true
 	    		// 所有数据行的选中状态与全选的状态一致
 	    		boxs.attr("checked",this.checked);
 	    	})
-	    	
 	 	  /** 给数据行绑定鼠标覆盖以及鼠标移开事件  */
 	    	$("tr[id^='data_']").hover(function(){
 	    		$(this).css("backgroundColor","#eeccff");
 	    	},function(){
 	    		$(this).css("backgroundColor","#ffffff");
-	    	})
-	    	
-	    	
+	    	})	
 	 	   /** 删除公告绑定点击事件 */
 	 	   $("#delete").click(function(){
 	 		   /** 获取到公告选中的复选框  */

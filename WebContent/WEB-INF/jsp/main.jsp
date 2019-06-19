@@ -16,8 +16,15 @@
 <frameset rows="80,*" cols="*" frameborder="no" border="0" framespacing="0">
   <frame src="${ctx}/top" name="title" scrolling="no" noresize="noresize" >
   <frameset cols="220,*" frameborder="no" border="0" framespacing="0">
+    <c:if test="${sessionScope.user_session.urole==0}">
     <frame src="${ctx}/left" name="tree" scrolling="no" marginheight="0" marginwidth="0">
-    <frame src="${ctx}/right" name="main" scrolling="yes" frameborder="0" marginwidth="0" marginheight="0" noresize="noresize">
+    <frame src="${ctx}/right" name="main" scrolling="yes" frameborder="0" marginwidth="0" marginheight="0" noresize="noresize"></c:if>
+    <c:if test="${sessionScope.user_session.urole==1}">
+    <frame src="${ctx}/left1" name="tree" scrolling="no" marginheight="0" marginwidth="0">
+    <frame src="${ctx}/right" name="main" scrolling="yes" frameborder="0" marginwidth="0" marginheight="0" noresize="noresize"></c:if>
+    <c:if test="${sessionScope.user_session.urole==2}">
+    <frame src="${ctx}/left2" name="tree" scrolling="no" marginheight="0" marginwidth="0">
+    <frame src="${ctx}/right" name="main" scrolling="yes" frameborder="0" marginwidth="0" marginheight="0" noresize="noresize"></c:if>
   </frameset>
 </frameset>
 <body>

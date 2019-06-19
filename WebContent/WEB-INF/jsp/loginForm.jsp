@@ -42,12 +42,6 @@
 <script type="text/javascript">
    
    $(function(){
-	    /** 按了回车键 */
-	   $(document).keydown(function(event){
-		   if(event.keyCode == 13){
-			   $("#login-submit-btn").trigger("click");
-		   }
-	   })
 
 	   /** 给登录按钮绑定点击事件  */
 	   $("#login-submit-btn").on("click",function(){
@@ -67,16 +61,12 @@
 			   return;
 		   }
 		   /** 提交表单 */
-		   $("#loginForm").submit();
-		   
+		   $("#loginForm").submit(); 
 	   })
 	   
    })
  
-
-
 </script>
-</head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
 <body style="font-family: 微软雅黑">

@@ -24,8 +24,11 @@ public interface DyUserDao {
 	@Select("select * from "+USERTABLE+" where uid = #{uid}")
 	DyUser selectById(Integer id);
 	
+	@Select("select  from "+USERTABLE+" where uid = #{uid}")
+	int selectRole(Integer id);
+	
 	// 根据id删除用户
-	@Delete(" delete from "+USERTABLE+" where uid = #{uid} ")
+	@Delete(" delete from urole"+USERTABLE+" where uid = #{uid} ")
 	void deleteById(Integer id);
 		
 	// 动态修改用户

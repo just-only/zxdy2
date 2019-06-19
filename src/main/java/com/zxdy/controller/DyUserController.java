@@ -22,13 +22,14 @@ public class DyUserController {
 	private DyUserService dyUserService;
 	
 	//处理登录请求
-	@RequestMapping(value="/zxdy2/login")
+	@RequestMapping(value="login")
 	public ModelAndView login(@RequestParam("loginname") String loginname,
 			 @RequestParam("password") String password,
 			 HttpSession session,
 			 ModelAndView mv){
 		// 调用业务逻辑组件判断用户是否可以登录
 		DyUser user = dyUserService.login(loginname, password);
+		
 		if(user != null){
 			// 将用户保存到HttpSession当中
 			session.setAttribute(ZxdyConstants.USER_SESSION, user);
@@ -52,7 +53,7 @@ public class DyUserController {
 		// 注销session
 		session.invalidate();
 		// 跳转到登录页面
-		//mv.setViewName("redirect:/loginForm");
+		mv.setViewName("redirect:/loginForm");
 		return mv;
 	}
 }

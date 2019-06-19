@@ -68,5 +68,11 @@ public class DyUserServiceImp implements DyUserService{
 		List<DyUser> users = userdao.selectByPage(params);		 
 		return users;
 	}
+
+	@Override
+	public int selectRole(Integer id) {
+		// TODO Auto-generated method stub
+		return userdao.selectRole(id);
+	}
 	
 }
